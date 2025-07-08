@@ -58,4 +58,4 @@ def recommend(
     scaled_input=scaler.transform(input)
     output=model.predict(scaled_input)
     crop=label_decoder.inverse_transform(output)[0]
-    return f"recommended crop:{crop}"
+    return f"recommended crop: {crop.capitalize()}"
