@@ -21,6 +21,12 @@ USER appuser
 # Ensure yieldenv.txt contains uvicorn, fastapi, and all other necessary packages
 RUN pip install --no-cache-dir -r yieldenv.txt
 
+# --- IMPORTANT FIX FOR "uvicorn: not found" ---
+# Add the user's local bin directory to the PATH
+# This ensures executables installed by pip (like uvicorn) are found
+ENV PATH="/home/appuser/.local/bin:${PATH}"
+# -----------------------------------------------
+
 # Temporarily switch back to root to change ownership of the /app directory
 # This is necessary because WORKDIR initially creates /app as root,
 # and the non-root user needs write access to copy the rest of the app.
@@ -40,5 +46,4 @@ EXPOSE 8000
 
 # Command to start the Uvicorn server
 # IMPORTANT: Use the shell form for CMD to allow ${PORT} variable expansion by the shell
-# This fixes the "Invalid value for '--port': '${PORT}' is not a valid integer" error
 CMD uvicorn main:app --host 0.0.0.0 --port ${PORT}
