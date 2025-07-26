@@ -46,4 +46,5 @@ EXPOSE 8000
 
 # Command to start the Uvicorn server
 # IMPORTANT: Use the shell form for CMD to allow ${PORT} variable expansion by the shell
-CMD uvicorn main:app --host 0.0.0.0 --port ${PORT}
+# ✅ This correctly expands $PORT using a shell
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT}"]

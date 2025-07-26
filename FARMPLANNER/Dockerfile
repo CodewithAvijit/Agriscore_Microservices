@@ -10,11 +10,11 @@ COPY requirements.txt .
 # Install dependencies
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-# Copy everything inside FARMPLANNER (Dockerfile is assumed here)
+# Copy the rest of the application
 COPY . .
 
-# Expose FastAPI default port
+# Expose the port (just for documentation)
 EXPOSE 8000
 
-# Start FastAPI
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start FastAPI using the port Render provides via $PORT
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port $PORT"]
