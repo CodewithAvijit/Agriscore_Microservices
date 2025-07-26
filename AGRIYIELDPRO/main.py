@@ -37,7 +37,7 @@ season = joblib.load("ENCODER-DECODER/season.pkl")
 state = joblib.load("ENCODER-DECODER/state.pkl")
 model = joblib.load("MODEL/histgradboosting.pkl")
 
-@app.get('/', response_class=PlainTextResponse, tags=['root'])
+@app.get('/', tags=['root'])
 def about():
     return "YIELD PREDICTION SYSTEM"
 
