@@ -18,7 +18,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 plant_vs_other_model = torch.load("MODELS-PLANTvsOTHERS/mobilenet_full_model.pth", map_location=device)
 plant_vs_other_model.to(device).eval()
 
-health_check_model = torch.load("MODELS_HealthCheck/Mobilenet_full_model.pth", map_location=device)
+health_check_model = torch.load("MODELS_HealthCheck/mobilenet_full_model.pth", map_location=device)
 health_check_model.to(device).eval()
 
 disease_model = torch.load("MODELS_DISEASE_DETECT/mobilenet.pth", map_location=device)
