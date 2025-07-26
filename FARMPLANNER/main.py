@@ -35,13 +35,13 @@ class INPUT_DATA(BaseModel):
 @app.get("/", response_class=PlainTextResponse, tags=["Root"])
 def about():
     return "🌱 CROP RECOMMENDATION SYSTEM API 🌱"
-@app.post('/recommend-json',tags=['Recommendation'],response_class=PlainTextResponse)
+@app.post('/recommend-json',tags=['Recommendation'])
 def recommend_json(data:INPUT_DATA):
     val=np.array([[data.n,data.p,data.k,data.temp,data.humidity,data.ph,data.rainfall]])
     scale=scaler.transform(val)
     prediction=model.predict(scale)
     output=label_decoder.inverse_transform(prediction)[0]
-    return f"recommended crop: {output}"
+    return {output}
     
 
 @app.post('/recommend',tags=['Recommendation'],response_class=PlainTextResponse)

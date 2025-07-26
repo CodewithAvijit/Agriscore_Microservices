@@ -41,7 +41,7 @@ model = joblib.load("MODEL/histgradboosting.pkl")
 def about():
     return "YIELD PREDICTION SYSTEM"
 
-@app.post('/predict', response_class=PlainTextResponse, tags=['predict'])
+@app.post('/predict',  tags=['predict'])
 def predict(data: INPUTDATA):
     if data.crop not in crop.classes_:
         return f"ERROR: Unknown crop '{data.crop}'"
@@ -60,7 +60,8 @@ def predict(data: INPUTDATA):
     
     scaled_input = scaler.transform(input)
     output = model.predict(scaled_input)[0]
-    return f"PREDICTED YIELD (kg/hec ) {output:.2f}"
+    return { round(float(output), 2)}
+
 
 @app.post("/predict_form", response_class=PlainTextResponse, tags=["predict"])
 def predict_form(

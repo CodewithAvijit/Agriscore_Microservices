@@ -86,7 +86,7 @@ def predict_disease(image_tensor):
 def root():
     return {"message": "🚀 FastAPI is running with plant disease detection pipeline!"}
 
-@app.post("/predict/", response_class=PlainTextResponse)
+@app.post("/predict/")
 async def predict_image(Plant: UploadFile = File(..., description="Upload a plant image")):
     try:
         image_tensor = prepare_image(Plant)
