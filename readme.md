@@ -1,6 +1,5 @@
-Here's the **raw markdown code** (`README.md`) for your **AgriAssure** project:
 
-````markdown
+
 # 🌾 AgriAssure: Smart Agriculture Platform
 
 AgriAssure is a smart, modular agriculture assistant that leverages IoT, Machine Learning, and Deep Learning to improve agricultural productivity. It includes three core modules:
