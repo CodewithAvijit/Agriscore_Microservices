@@ -16,20 +16,20 @@ app = FastAPI(
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # --------------------- Load Models ---------------------
-plant_vs_other_model = torch.load("MODELS-PLANTvsOTHERS/mobilenet_full_model.pth", map_location=device)
-plant_vs_other_model.to(device).eval()
+# ✅ YOLO model for PLANT vs NONPLANT
+plant_vs_other_model = YOLO("MODELS-PLANTvsOTHERS/best.pt")
 
+# ✅ MobileNet model for HEALTHY vs UNHEALTHY
 health_check_model = torch.load("MODELS_HealthCheck/mobilenet_full_model.pth", map_location=device)
 health_check_model.to(device).eval()
 
-# ✅ Updated: Load YOLOv8 classification model
+# ✅ YOLOv8 classification model for disease detection
 disease_model = YOLO("MODELS_DISEASE_DETECT/best.pt")
 
 # --------------------- Class Labels ---------------------
-plant_vs_other_classes = ['OTHERS', 'PLANT']
 health_classes = ['HEALTHY', 'UNHEALTHY']
 
-# --------------------- Transform (for Mobilenet only) ---------------------
+# --------------------- Transform (for MobileNet only) ---------------------
 transform = v2.Compose([
     v2.Resize((224, 224)),
     v2.ToImage(),
@@ -38,36 +38,36 @@ transform = v2.Compose([
 ])
 
 # --------------------- Helper Functions ---------------------
-
 def prepare_image(upload_file: UploadFile):
     image_bytes = upload_file.file.read()
     image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
     tensor = transform(image).unsqueeze(0).to(device)
-    return tensor, image   # return both tensor (for mobilenet) and raw PIL image (for YOLO)
+    return tensor, image
 
-def is_plant(image_tensor):
-    with torch.no_grad():
-        output = plant_vs_other_model(image_tensor)
-        pred = int(torch.round(torch.sigmoid(output)).item())
-        return plant_vs_other_classes[pred]
+# ✅ YOLO model for PLANT vs NONPLANT
+def is_plant(image):
+    results = plant_vs_other_model(image)
+    probs = results[0].probs
+    pred_idx = int(probs.top1)
+    category = plant_vs_other_model.names[pred_idx]
+    return category  # "PLANT" or "NONPLANT"
 
+# ✅ MobileNet for HEALTHY vs UNHEALTHY
 def is_healthy(image_tensor):
     with torch.no_grad():
         output = health_check_model(image_tensor)
         pred = int(torch.round(torch.sigmoid(output)).item())
         return health_classes[pred]
 
-# ✅ Updated: Disease prediction with YOLO
+# ✅ YOLO disease classification
 def predict_disease(image):
-    results = disease_model(image)  
+    results = disease_model(image)
     probs = results[0].probs
     pred_idx = int(probs.top1)
-    confidence = float(probs.top1conf)
     disease_name = disease_model.names[pred_idx].replace("_", " ")
-    return f"{disease_name}"
+    return disease_name
 
 # --------------------- Routes ---------------------
-
 @app.get("/")
 def root():
     return {"message": "🚀 FastAPI is running with plant disease detection pipeline!"}
@@ -78,8 +78,8 @@ async def predict_image(Plant: UploadFile = File(..., description="Upload a plan
         image_tensor, raw_image = prepare_image(Plant)
 
         # Step 1: Check if image is of a plant
-        category = is_plant(image_tensor)
-        if category == "OTHERS":
+        category = is_plant(raw_image)
+        if category.upper() == "NONPLANT":
             return "CHECK IMAGE: Use Another Image"
 
         # Step 2: Check if plant is healthy
