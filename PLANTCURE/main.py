@@ -1,9 +1,10 @@
 from fastapi import FastAPI, UploadFile, File
-from fastapi.responses import JSONResponse, PlainTextResponse
+from fastapi.responses import JSONResponse
 import torch
 import torchvision.transforms.v2 as v2
 from PIL import Image
 import io
+from ultralytics import YOLO
 
 # --------------------- FastAPI Setup ---------------------
 app = FastAPI(
@@ -21,29 +22,14 @@ plant_vs_other_model.to(device).eval()
 health_check_model = torch.load("MODELS_HealthCheck/mobilenet_full_model.pth", map_location=device)
 health_check_model.to(device).eval()
 
-disease_model = torch.load("MODELS_DISEASE_DETECT/mobilenet.pth", map_location=device)
-disease_model.to(device).eval()
+# ✅ Updated: Load YOLOv8 classification model
+disease_model = YOLO("MODELS_DISEASE_DETECT/best.pt")
 
 # --------------------- Class Labels ---------------------
 plant_vs_other_classes = ['OTHERS', 'PLANT']
 health_classes = ['HEALTHY', 'UNHEALTHY']
 
-disease_classes = [
-    'Apple___Apple_scab', 'Apple___Black_rot', 'Apple___Cedar_apple_rust', 'Apple___healthy',
-    'Blueberry___healthy', 'Cherry_(including_sour)___Powdery_mildew', 'Cherry_(including_sour)___healthy',
-    'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot', 'Corn_(maize)___Common_rust_',
-    'Corn_(maize)___Northern_Leaf_Blight', 'Corn_(maize)___healthy', 'Grape___Black_rot',
-    'Grape___Esca_(Black_Measles)', 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)', 'Grape___healthy',
-    'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot', 'Peach___healthy',
-    'Pepper__bell___Bacterial_spot', 'Pepper__bell___healthy', 'Potato___Early_blight',
-    'Potato___Late_blight', 'Potato___healthy', 'Raspberry___healthy', 'Soybean___healthy',
-    'Squash___Powdery_mildew', 'Strawberry___Leaf_scorch', 'Strawberry___healthy',
-    'Tomato__Target_Spot', 'Tomato___Bacterial_spot', 'Tomato___Early_blight', 'Tomato___Late_blight',
-    'Tomato___Leaf_Mold', 'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite',
-    'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus', 'Tomato_healthy'
-]
-
-# --------------------- Transform ---------------------
+# --------------------- Transform (for Mobilenet only) ---------------------
 transform = v2.Compose([
     v2.Resize((224, 224)),
     v2.ToImage(),
@@ -57,7 +43,7 @@ def prepare_image(upload_file: UploadFile):
     image_bytes = upload_file.file.read()
     image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
     tensor = transform(image).unsqueeze(0).to(device)
-    return tensor
+    return tensor, image   # return both tensor (for mobilenet) and raw PIL image (for YOLO)
 
 def is_plant(image_tensor):
     with torch.no_grad():
@@ -71,14 +57,14 @@ def is_healthy(image_tensor):
         pred = int(torch.round(torch.sigmoid(output)).item())
         return health_classes[pred]
 
-def predict_disease(image_tensor):
-    with torch.no_grad():
-        output = disease_model(image_tensor)
-        probs = torch.softmax(output, dim=1)
-        pred_idx = torch.argmax(probs, dim=1).item()
-        confidence = probs[0][pred_idx].item()
-        disease_name = disease_classes[pred_idx].replace("_", " ")
-        return f"{disease_name}"
+# ✅ Updated: Disease prediction with YOLO
+def predict_disease(image):
+    results = disease_model(image)  
+    probs = results[0].probs
+    pred_idx = int(probs.top1)
+    confidence = float(probs.top1conf)
+    disease_name = disease_model.names[pred_idx].replace("_", " ")
+    return f"{disease_name}"
 
 # --------------------- Routes ---------------------
 
@@ -89,7 +75,7 @@ def root():
 @app.post("/predict/")
 async def predict_image(Plant: UploadFile = File(..., description="Upload a plant image")):
     try:
-        image_tensor = prepare_image(Plant)
+        image_tensor, raw_image = prepare_image(Plant)
 
         # Step 1: Check if image is of a plant
         category = is_plant(image_tensor)
@@ -101,8 +87,8 @@ async def predict_image(Plant: UploadFile = File(..., description="Upload a plan
         if health == "HEALTHY":
             return "HEALTHY"
 
-        # Step 3: Predict disease
-        disease = predict_disease(image_tensor)
+        # Step 3: Predict disease using YOLO
+        disease = predict_disease(raw_image)
         return disease
 
     except Exception as e:

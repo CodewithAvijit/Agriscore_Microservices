@@ -22,3 +22,4 @@ for url in api_urls:
     time.sleep(1)
 
 print("Finished API pings.")
+
