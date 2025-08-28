@@ -18,6 +18,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # --------------------- Load Models ---------------------
 # ✅ YOLO model for PLANT vs NONPLANT
 plant_vs_other_model = YOLO("MODELS-PLANTvsOTHERS/best.pt")
+plant_vs_other_model.to(device).eval()
+
 
 # ✅ MobileNet model for HEALTHY vs UNHEALTHY
 health_check_model = torch.load("MODELS_HealthCheck/mobilenet_full_model.pth", map_location=device)
