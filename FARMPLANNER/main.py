@@ -44,18 +44,16 @@ def recommend_json(data:INPUT_DATA):
     return {output}
     
 
-@app.post('/recommend',tags=['Recommendation'],response_class=PlainTextResponse)
-def recommend(
-    n: int = Form(..., ge=0, description='Nitrogen'),
-    p: int = Form(..., ge=0, description='Phosphorus'),
-    k: int = Form(..., ge=0, description='Potassium'),
-    temp: float = Form(..., description='Temperature'),
-    humidity: float = Form(..., description='Humidity'),
-    ph: float = Form(..., ge=0.0, le=14.0, description='pH Level'),
-    rainfall: float = Form(..., ge=0.0, description='Rainfall in mm')
-):
-    input=np.array([[n,p,k,temp,humidity,ph,rainfall]])
-    scaled_input=scaler.transform(input)
-    output=model.predict(scaled_input)
-    crop=label_decoder.inverse_transform(output)[0]
-    return f"recommended crop: {crop.capitalize()}"
+@app.post('/recommend', tags=['Recommendation'])
+def recommend_top5_json(data: INPUT_DATA):
+    val = np.array([[data.n, data.p, data.k, data.temp, data.humidity, data.ph, data.rainfall]])
+    scale = scaler.transform(val)
+    proba = model.predict_proba(scale)[0]  # get 1D array of probabilities for one sample
+    top5_idx = np.argsort(proba)[::-1][:5]  # top 5 class indices, descending order
+    top5_crops = label_decoder.inverse_transform(top5_idx)  # get crop names for top indices
+    top5_probs = proba[top5_idx]  # their probabilities
+
+    results = []
+    for rank, (crop, prob) in enumerate(zip(top5_crops, top5_probs), 1):
+        results.append({'rank': rank, 'crop': crop, 'probability': round(float(prob), 4)})
+    return {"top_5_crops": results}
