@@ -1,0 +1,467 @@
+[33mcommit 917f7a1ae69d282feaa71a8ef0ddeadf00470a7b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mml[m[33m)[m
+Author: Avijit Bhadra <codewithavijit@gmail.com>
+Date:   Thu Oct 30 13:20:28 2025 +0530
+
+    add health check
+
+[33mcommit a24ce8f69dbbc467a280caafdd72a810cd9c445e[m
+Author: agriscoretech <agriscore.tech@gmail.com>
+Date:   Sun Sep 21 14:46:19 2025 +0530
+
+    add eda
+
+[33mcommit 86b1c09366626a90f1714771fa746c339d008df6[m
+Author: agriscoretech <agriscore.tech@gmail.com>
+Date:   Tue Sep 16 16:04:02 2025 +0530
+
+    update plantcure 2.0
+
+[33mcommit e7676592375cacbd925d4c3dd9de696f6d210491[m
+Author: agriscoretech <agriscore.tech@gmail.com>
+Date:   Tue Sep 16 15:52:22 2025 +0530
+
+    update plantcure
+
+[33mcommit b18e0ef371813b8ae3956f9a6c48af4f42afaef8[m
+Author: agriscoretech <agriscore.tech@gmail.com>
+Date:   Tue Sep 16 15:35:53 2025 +0530
+
+    update plantcure
+
+[33mcommit a424ee915a9acd2ceafd5e0f032d07a9935ca12c[m[33m ([m[1;32mmain[m[33m)[m
+Author: agriscoretech <agriscore.tech@gmail.com>
+Date:   Mon Sep 15 13:51:35 2025 +0530
+
+    add ai part babes
+
+[33mcommit 766f246904c15cd2da98ff27f37c5e4bdf88536c[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Sep 10 16:51:25 2025 +0530
+
+    add Ml and ai
+
+[33mcommit 663aee2fdd849c25a1c2dd5a245fc532f9e2fc11[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Sep 9 23:19:41 2025 +0530
+
+    Add dockerfile
+
+[33mcommit ebd23a406877476e9220a408354149082bb19cca[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Sep 9 23:13:16 2025 +0530
+
+    add weather api
+
+[33mcommit 7fe585a8daeac1bb16c9ad038613531593de0144[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Aug 29 03:44:34 2025 +0530
+
+    add main.py
+
+[33mcommit 07001ebea749fcf60b54dba19b3d1abc52835522[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Aug 29 03:10:48 2025 +0530
+
+    add docker
+
+[33mcommit cf9e49d84a2f41a6525dc8b3162117139a6f1422[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Aug 29 02:50:27 2025 +0530
+
+    update requirements.txt
+
+[33mcommit afe9327f627779c7ddb133a9cdaf2d4a5e8d5125[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Aug 29 02:36:26 2025 +0530
+
+    update models
+
+[33mcommit b92d982308e379a335a07e4b91c5fef34fe48fb1[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Aug 29 02:19:35 2025 +0530
+
+    update api
+
+[33mcommit 3240e889331be35776000bc41e63f4b14e0aa779[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Aug 29 02:19:00 2025 +0530
+
+    add yolo model
+
+[33mcommit e1ceb5eb7d54414b3ddb4c712ad865276029e76e[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Aug 29 00:01:31 2025 +0530
+
+    add yolo model
+
+[33mcommit bb3ecb9a47cde6f9898e102f985afc9c9987b994[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Thu Aug 28 23:52:21 2025 +0530
+
+    add yolo model
+
+[33mcommit 7a26c6223a81a236b1ad0b632441ff10c3a93aed[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sat Aug 23 01:09:29 2025 +0530
+
+    add cronjob
+
+[33mcommit b1bbd4835c65340917db11814fe07e7d7d296a0d[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Mon Jul 28 18:52:26 2025 +0530
+
+    update yield api
+
+[33mcommit cdf53d40ddfcab98e2365bb42bd9333b618fb4b8[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sun Jul 27 01:07:50 2025 +0530
+
+    update port
+
+[33mcommit 00ac708be9e05a1c7a139aa0c3a6a5d3071ab61f[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sun Jul 27 00:24:18 2025 +0530
+
+    Dockerize Farmplanner
+
+[33mcommit 3d0c046610a5a936b1ccf575057de96ae5820cbc[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sat Jul 26 23:50:40 2025 +0530
+
+    update AGRIYIELDPRO api
+
+[33mcommit 408ea1861c6a7372fc780f2808eb0dce2dd6d7fc[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sat Jul 26 23:43:44 2025 +0530
+
+    update fastapi codes
+
+[33mcommit 8d6a96afcd5b6fe7a85a86519dcaea8492cb3e6b[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sat Jul 26 23:12:11 2025 +0530
+
+    add readme.md updated
+
+[33mcommit 52ef83c137c65dfe63de8999d4d820d150ee2940[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sat Jul 26 22:59:34 2025 +0530
+
+    add readme.md
+
+[33mcommit f3e950bd842841eb2c39e4d921d640a4a137d5f1[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sat Jul 26 21:23:55 2025 +0530
+
+    containerize model
+
+[33mcommit 3abeacd72ffa4cc9829fd893d1092d897e3c366e[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Jul 25 00:30:21 2025 +0530
+
+    add plantcure with mobilenetv3s
+
+[33mcommit e226cc49d247429260fb0484222630adada04bce[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Thu Jul 24 00:22:33 2025 +0530
+
+    add plantcure
+
+[33mcommit 2cfaaf77a1a7c42a68d9efce1b001714fa538f97[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Jul 11 16:11:49 2025 +0530
+
+    changes in docker
+
+[33mcommit b8c7e34650f91010a4c722422369db808624d00f[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Jul 11 16:08:04 2025 +0530
+
+    changes in docker
+
+[33mcommit c35b542b9eb2bcd685b56de175f76785932c7c09[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Jul 11 15:56:38 2025 +0530
+
+    changes in docker
+
+[33mcommit 05a02bfe3ae3a257ee3ffd43a99bc3bc13a14c2e[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Jul 11 15:45:26 2025 +0530
+
+    Ignore PLANTCURE folder
+
+[33mcommit 01e01b887352e9c018e138109e8ab1014f05b6fc[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Jul 11 15:30:36 2025 +0530
+
+    add AGRIYIELDPRO API WITH DOCKERFILE
+
+[33mcommit 557fc8e6e7c5f00ccd1c2c0398431611122f43ed[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Jul 8 23:44:55 2025 +0530
+
+    add AGRIYIELDPRO MODELS
+
+[33mcommit 69d7fa19dc12689e6e6b911e839c426d0feec64e[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Jul 8 18:35:58 2025 +0530
+
+    final  deployable version
+
+[33mcommit 02942cc122f6a5a60321e59f1b7b45ca6079acbc[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Jul 8 18:16:13 2025 +0530
+
+     deployable version
+
+[33mcommit 627c36db0b3e5ad750c1a6004a83fb3c3307753f[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Jul 8 18:10:57 2025 +0530
+
+     deployable version
+
+[33mcommit 3a43c23df3466bb4269e93e70f378a15d218773e[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Jul 8 17:55:03 2025 +0530
+
+     deployable version
+
+[33mcommit 8073b1b011fe02aaf6babac5a82bcdc0b50c2b1c[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Jul 8 17:53:59 2025 +0530
+
+    change render yml to yaml
+
+[33mcommit c407a166642bd9f33c628fb1ddfc57889a899d8a[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Jul 8 17:48:11 2025 +0530
+
+    deployable version
+
+[33mcommit 18cfb972000de362e611aa35cebde985d9d204df[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Jul 8 14:02:55 2025 +0530
+
+    Add runtime.txt
+
+[33mcommit 964f4bd7672fc398b22261d58b3a17a4b9c59f0f[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Jul 8 13:55:36 2025 +0530
+
+    remove cu118 from torch dependencies
+
+[33mcommit ef3d3b8b50dc2fb21c04ce204110a42fd83a4ec7[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Jul 8 13:40:34 2025 +0530
+
+    delete pywin from requirements
+
+[33mcommit 284fa8529f7b10c73aab9769fda0b86b9537f135[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Tue Jul 8 12:49:36 2025 +0530
+
+    add farmplanner procfile and requirements.txt
+
+[33mcommit fbcf374a8a3abf82427bb06cabfea828a0f4e19b[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Mon Jul 7 15:48:23 2025 +0530
+
+    add AGROENV venv
+
+[33mcommit cf760af8dbef48e9df146ffcdca8eaf4de585e66[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 23:09:21 2025 +0530
+
+    add processed dataset of yield prediction
+
+[33mcommit 13a4b41cb4fb6f80c26dc0b77def32e7f486fe05[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 21:20:42 2025 +0530
+
+    change crop recommendation system to FARMPLANNER and add AGRIYIELD PRO
+
+[33mcommit 625e31210a6b9309c04bbfb5af448176de3cbc6f[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 16:27:14 2025 +0530
+
+    Ready for Railway deploy
+
+[33mcommit 3d74d7e9604da9fc9b5b90786aea511ac3afe8c3[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 16:10:23 2025 +0530
+
+    Ready for Railway deploy
+
+[33mcommit a3d607a24f6b2fd513ba33b08b012352971d62f2[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 15:50:14 2025 +0530
+
+    add changes
+
+[33mcommit 5d1e967b48a1e0d26212b474e91b3a4b717929ab[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 15:41:13 2025 +0530
+
+    add changes
+
+[33mcommit bb06192938cb14f74574ed783b9a43c16d2ece71[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 15:34:57 2025 +0530
+
+    add changes
+
+[33mcommit bbed58ba5c71a425077624ad63bcf9580dc0f028[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 15:29:59 2025 +0530
+
+    add changes
+
+[33mcommit 7ebed678687bf2d138ac176f6244f793bb5f541a[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 15:29:17 2025 +0530
+
+    add changes
+
+[33mcommit ee84ac85894fe15cbf956fd39d359e935dcbf783[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 15:24:02 2025 +0530
+
+    add requirements.txt
+
+[33mcommit 82567b4decc90199187bf3b362a52a6e08f94939[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 15:13:57 2025 +0530
+
+    dellete start.sh
+
+[33mcommit e6150d46b108a54c9af5110022c1d5af50e66165[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 14:55:45 2025 +0530
+
+    add requirementx.txt
+
+[33mcommit d3d775b79781d7ccc82bd6ac6a8290f8c48f2371[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 14:42:26 2025 +0530
+
+    add requirementx.txt
+
+[33mcommit 3e34bb9cc7b6768ad6bcb0625488b127a9a76a2f[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 14:19:57 2025 +0530
+
+    fix requirements.txt
+
+[33mcommit f2e7fc36bfb48453caae27a185f77e303ed4d00c[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 14:11:25 2025 +0530
+
+    Cleaned requirements for Render deployment
+
+[33mcommit 2c4d98809d1c3320834246f11dd4c31f2c633354[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 14:03:08 2025 +0530
+
+    add envVars on render.yaml
+
+[33mcommit 584b8360bacd54223fa87ce76f49a64e699b9a5c[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 14:02:10 2025 +0530
+
+    add render.yaml
+
+[33mcommit b91563d3a3510de7d1b91462fd32be6a2ba51c69[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 13:49:17 2025 +0530
+
+    add start.sh and requirements
+
+[33mcommit 25a135b3e8464a779ad558dac5687414ac921e4d[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 13:32:00 2025 +0530
+
+    add app.py
+
+[33mcommit 73cf353c2e8f63b9593669e2e7f7dfbd039ce065[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 12:58:44 2025 +0530
+
+    add Random-forest  model and its result
+
+[33mcommit c550b1ed74d38aa1ae586cdf36ef40fe51411ab1[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Wed Jul 2 12:27:17 2025 +0530
+
+    add logistic model and its result
+
+[33mcommit 7e1d0932fa5f665c8ba83d78cbd3030eee2cb765[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sun Jun 29 14:50:30 2025 +0530
+
+    add some changes in plot
+
+[33mcommit 578bbbe9d8acdfa25326fad8e50154fabf8004fe[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sun Jun 29 14:07:41 2025 +0530
+
+    move xgboost_hypertuning to RESULT/xgboost
+
+[33mcommit 9c4428f670c8617d20813d93fb9d6caed8e71f40[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sun Jun 29 14:05:38 2025 +0530
+
+    add better visualization of result including learning curve,confusion matrix,classification metrics
+
+[33mcommit 7cbea0e13dbfadfc39962e3ddea9053f34984517[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sun Jun 29 00:54:28 2025 +0530
+
+     rename plot image and title of the plot
+
+[33mcommit c77c42571cdf17a23431516e7f01b6af270847f1[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sun Jun 29 00:48:56 2025 +0530
+
+    add feedforward neural network model
+
+[33mcommit 1f2f8da532ac4f52ccf1cd4e51432ae13655c3ba[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Jun 27 21:33:13 2025 +0530
+
+    add RESULT FOLDER
+
+[33mcommit 63f8d36533681a33bf3c48b57589be8ba898c8ae[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Fri Jun 27 21:22:03 2025 +0530
+
+    change branch name
+
+[33mcommit cc8921b5c0fe23d74d307ad8a24d988ca457b771[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Thu Jun 26 14:22:03 2025 +0530
+
+    train xgboost model and save in MODELS
+
+[33mcommit 48f4aef56faee7bba353005dd62dba9f56cc4a0d[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sun Jun 22 16:05:10 2025 +0530
+
+    remove unnecessary txt file
+
+[33mcommit b7517d74ac62b670cae1f62a1deb8c06ff1e7fcd[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sun Jun 22 16:03:39 2025 +0530
+
+    preprocessing done with crop recommendation dataset
+
+[33mcommit 6059ffcbd6ed262d8c983831e7d623603518ac06[m
+Author: CodewithAvijit <codewithavijit@gmail.com>
+Date:   Sat Jun 21 21:25:25 2025 +0530
+
+    CREATE CROP_RECOMMENDATION FOLDER
+
+[33mcommit a215e9fb917dc4f60c4c499bdc8cde4c8682d528[m
+Author: Soham Das <sohamdasinside@gmail.com>
+Date:   Sat Jun 21 19:04:52 2025 +0530
+
+    Create README.md
